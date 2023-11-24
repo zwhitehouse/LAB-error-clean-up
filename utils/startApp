@@ -1,0 +1,25 @@
+import {
+  htmlStructure, header, startSortingBtn, filterBtnRow, studentAreas
+} from '../components/htmlStructure';
+import form from '../components/form';
+
+const events = () => {
+  // get form on the DOM on button click
+  document.querySelector('#start-sorting').addEventListener('click', () => {
+    // put html elements on the DOM on click
+    form(); // form
+    filterBtnRow(); // filter buttons
+    studentAreas(); // students and voldy's army divs\\
+  });
+};
+
+const startApp = () => {
+  htmlStructure(); // always load first
+  header();
+  startSortingBtn();
+  events(); // always load last
+};
+
+startApp();
+
+export default startApp;
